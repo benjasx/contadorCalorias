@@ -9,7 +9,7 @@ function App() {
           <button className="bg-gray-800 py-1 px-4 rounded text-white hover:bg-slate-600">Reiniciar</button>
         </div>
       </header>
-      <section className=" bg-lime-800">
+      <section className=" bg-lime-500">
         <div className="max-w-4xl mx-auto py-20 px-5">
           <Form/>
         </div>
