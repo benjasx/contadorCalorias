@@ -4,6 +4,7 @@ export type category = {
 }
 
 export type Activity = {
+    id:string,
     category: number,
     namex:string,
     calories: number,

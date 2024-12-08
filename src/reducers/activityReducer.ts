@@ -1,24 +1,29 @@
-import { Activity } from "../types"
+import { Activity } from "../types";
 
-export type ActivityActions = 
-    {type:'save-activity', payload:{newActivity:Activity}}
-
+export type ActivityActions = {
+  type: "save-activity";
+  payload: { newActivity: Activity };
+};
 
 type ActivityState = {
-    activities: Activity[]
-}
+  activities: Activity[];
+};
 
 export const initialState: ActivityState = {
-    activities:[]
-}
+  activities: [],
+};
 
 export const ActivityReducer = (
-    state:ActivityState = initialState,
-    action:ActivityActions
+  state: ActivityState = initialState,
+  action: ActivityActions
 ) => {
-    if(action.type === 'save-activity'){
-        //Este codigo maneja la logica para actualiar el state
-        console.log('Click desde use reducer');
-        
+  if (action.type === "save-activity") {
+    
+    
+    return{
+      ...state,
+      activities: [...state.activities, action.payload.newActivity]
     }
-}
+  }
+  return state
+};
