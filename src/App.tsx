@@ -9,7 +9,7 @@ function App() {
     localStorage.setItem('activities',JSON.stringify(state.activities))
   },[state.activities]);
 
-  const canRestartApp = () => useMemo (() => state.activities.length,[state.activities])
+  const canRestartApp = useMemo(() => state.activities.length > 0, [state.activities]);
   return (
     <>
       <header className="bg-lime-600 p-3">
@@ -17,7 +17,7 @@ function App() {
           <h1 className="uppercase text-white font-black text-lg">
             contador de calorias
           </h1> 
-          <button className="bg-gray-800 py-1 px-4 rounded text-white hover:bg-slate-600 disabled:opacity-10" disabled={!canRestartApp()} onClick={()=> dispatch({type:'restart-app'})}>
+          <button className="bg-gray-800 py-1 px-4 rounded text-white hover:bg-slate-600 disabled:opacity-10" disabled={!canRestartApp} onClick={()=> dispatch({type:'restart-app'})}>
             Reiniciar
           </button>
         </div>
